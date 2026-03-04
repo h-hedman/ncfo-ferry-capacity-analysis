@@ -1,0 +1,115 @@
+
+NCFO Operator Survey — EDA/QC + Canonicalization
+================================================
+Run timestamp (local): 2026-02-04T13:31:22
+Project root: G:\My Drive\Nexus\Employment\9_U.S. Department of Transportation (DOT) - ORISE\DOT - ORISE\Projects\NCFO ML
+Inputs:
+  2022: G:\My Drive\Nexus\Employment\9_U.S. Department of Transportation (DOT) - ORISE\DOT - ORISE\Projects\NCFO ML\data\raw\operator\operator_2022.csv (kind=csv)
+  2020: G:\My Drive\Nexus\Employment\9_U.S. Department of Transportation (DOT) - ORISE\DOT - ORISE\Projects\NCFO ML\data\raw\operator\operator_2020.csv (kind=csv)
+  2018: G:\My Drive\Nexus\Employment\9_U.S. Department of Transportation (DOT) - ORISE\DOT - ORISE\Projects\NCFO ML\data\raw\operator\operator_2018.xlsx (kind=xlsx)
+Output processed CSV: G:\My Drive\Nexus\Employment\9_U.S. Department of Transportation (DOT) - ORISE\DOT - ORISE\Projects\NCFO ML\data\processed\operator_master.csv
+Output log: G:\My Drive\Nexus\Employment\9_U.S. Department of Transportation (DOT) - ORISE\DOT - ORISE\Projects\NCFO ML\logs\operator\operator_eda_20260204_133122.txt
+Figures dir: G:\My Drive\Nexus\Employment\9_U.S. Department of Transportation (DOT) - ORISE\DOT - ORISE\Projects\NCFO ML\figures\operator
+
+Per-Source Read + Schema Capture
+================================
+2022: read rows=145 cols=52
+  raw year cols found: 1
+  canonical cols: 55
+2020: read rows=164 cols=51
+  raw year cols found: 1
+  canonical cols: 55
+2018: read rows=181 cols=47
+  raw year cols found: 0
+  canonical cols: 55
+
+Master Dataset Overview (Post-Union)
+====================================
+Rows: 490
+Cols: 55
+
+Top missingness (rate):
+  trip_purpose_other_desc              0.920
+  pub_fund_prog_8                      0.369
+  raw_data_year                        0.369
+  pub_fund_type_8                      0.369
+  pub_fund_source_8                    0.369
+  pub_fund_prog_6                      0.367
+  pub_fund_type_6                      0.367
+  pub_fund_source_7                    0.367
+  pub_fund_prog_7                      0.367
+  pub_fund_type_7                      0.367
+  pub_fund_source_6                    0.367
+  pub_fund_prog_4                      0.361
+  pub_fund_type_5                      0.361
+  pub_fund_prog_5                      0.361
+  pub_fund_source_4                    0.361
+  pub_fund_source_5                    0.361
+  pub_fund_type_4                      0.359
+  pub_fund_prog_3                      0.349
+  pub_fund_type_3                      0.347
+  pub_fund_source_3                    0.347
+
+Duplicate rows (exact match across all columns): 0
+operator_id: null=0 empty/blank=0 unique=208
+operator_name: null=0 empty/blank=0 unique=258
+
+Year Field QC (raw vs authoritative)
+====================================
+Rows with embedded raw year present: 309
+Rows where raw year != authoritative data_year: 164
+
+Most common raw year values (top 10):
+  2019        164
+  2022        145
+
+Binary/Flag Field Normalization QC
+==================================
+trip_purpose_commuter_transit: nonnull=490 mapped=490 unmapped=0
+trip_purpose_pleasure: nonnull=490 mapped=490 unmapped=0
+trip_purpose_emergency: nonnull=490 mapped=490 unmapped=0
+trip_purpose_roadway_conn: nonnull=490 mapped=490 unmapped=0
+trip_purpose_lifeline: nonnull=490 mapped=490 unmapped=0
+trip_purpose_nps: nonnull=490 mapped=490 unmapped=0
+trip_purpose_other: nonnull=490 mapped=490 unmapped=0
+trip_purpose_other_desc: nonnull=39 mapped=0 unmapped=39
+  Unmapped examples (top 5):
+    Ferry Services (cars, trucks, motorcycles, bicycles, etc)  3
+    Commercial Service    2
+    State Park Access     2
+    Passenger ferry       2
+    freight               1
+accepts_public_funding: nonnull=483 mapped=483 unmapped=0
+
+Revenue Numeric Coercion QC
+===========================
+ticket_revenue: nonnull=433 parsed=388 failed=45
+  Parse-fail examples (top 5):
+    NA                         45
+private_contract_revenue: nonnull=355 parsed=267 failed=88
+  Parse-fail examples (top 5):
+    NA                         88
+advertising_revenue: nonnull=324 parsed=218 failed=106
+  Parse-fail examples (top 5):
+    NA                         106
+public_contract_revenue: nonnull=331 parsed=229 failed=102
+  Parse-fail examples (top 5):
+    NA                         102
+federal_funding_revenue: nonnull=331 parsed=232 failed=99
+  Parse-fail examples (top 5):
+    NA                         99
+state_funding_revenue: nonnull=329 parsed=235 failed=94
+  Parse-fail examples (top 5):
+    NA                         94
+local_funding_revenue: nonnull=333 parsed=232 failed=101
+  Parse-fail examples (top 5):
+    NA                         101
+other_funding_revenue: nonnull=330 parsed=224 failed=106
+  Parse-fail examples (top 5):
+    NA                         106
+
+Outputs Written
+===============
+Processed CSV: G:\My Drive\Nexus\Employment\9_U.S. Department of Transportation (DOT) - ORISE\DOT - ORISE\Projects\NCFO ML\data\processed\operator_master.csv
+Log file: G:\My Drive\Nexus\Employment\9_U.S. Department of Transportation (DOT) - ORISE\DOT - ORISE\Projects\NCFO ML\logs\operator\operator_eda_20260204_133122.txt
+Missingness heatmap: G:\My Drive\Nexus\Employment\9_U.S. Department of Transportation (DOT) - ORISE\DOT - ORISE\Projects\NCFO ML\figures\operator\operator_missingness_20260204_133122.png

@@ -15,6 +15,10 @@ The National Census of Ferry Operators (NCFO) is the only federally maintained, 
 - **Key elements:** operators, route segments, terminals, vessels, trips, passenger and vehicle boardings.
 - **Scope:** national coverage; fixed-route ferry services; descriptive and comparative analysis.
 
+### NCFO Documentation
+- **Methodology:** [NCFO Survey Methodology](https://www.bts.gov/browse-statistical-products-and-data/surveys/national-census-ferry-operators-ncfo/Methodology)
+- **Data Dictionary:** [NCFO 2022 Data Dictionary](https://www.bts.gov/browse-statistical-products-and-data/surveys/national-census-ferry-operators-ncfo/2022-national)
+
 ## Analytical and Simulation Framework (High-Level)
 - Organize NCFO data into a multi-layer system framework linking operators, assets, network structure, and service activity.
 - Use descriptive analysis to identify patterns and variability in capacity and utilization.
